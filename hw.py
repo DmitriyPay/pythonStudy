@@ -44,4 +44,4 @@ while arr:
         ind_max = ind
 
 print(f" MiN = {min}, index min = {ind_min}, MAX = {max}, index max = {ind_max}")
-
+print("Test refresh from VS Code")
