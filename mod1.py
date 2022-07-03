@@ -1,6 +1,5 @@
 from Levenshtein import distance
 from pymorphy2 import MorphAnalyzer
-import pprint
 
 def levenshtein_func(s1,s2):
     r = distance(s1, s2)
@@ -14,12 +13,13 @@ def compare(s1,s2):
 
     return count / max(len(s1), len(s2))
 
-def morf_compare(s1,s2):
+#Соединяем метод Compare и приведение слова к нормальной форме
+def morf_compare(s1,s2): 
     ma = MorphAnalyzer()
     
     m_s1 = ma.parse(s1)[0].normal_form
     m_s2 = ma.parse(s2)[0].normal_form
-    print(m_s1, ' ', m_s2)
+    #print(m_s1, ' ', m_s2)
 
     return compare(m_s1, m_s2)
 
